@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <br class="col-sm-0" />
+  <ion-row>
+    <ion-col>
+      <h3 class="text-center">Login</h3>
+    </ion-col>
+  </ion-row>
+  <br class="col-sm-0" />
+  <ion-row>
+    <ion-col col-md-6 offset-md-3>
+      <ion-card>
+        <ion-card-header>
+        </ion-card-header>
+        <form #form="ngForm" (ngSubmit)="sendRequest()">
+          <ion-list>
+            <ion-item class="search-content">
+              <ion-label stacked>Username</ion-label>
+              <ion-input #firstname="ngModel" name="firstname" [(ngModel)]="form.firstname" required type="text"></ion-input>
+            </ion-item>
+            <ion-item class="search-content">
+              <ion-label stacked>Password</ion-label>
+              <ion-input #surname="ngModel" name="surname" [(ngModel)]="form.surname" required type="password"></ion-input>
+            </ion-item>
+            <button type="submit" color="primary" [disabled]="!form.valid" ion-button>
+              Login </button>
+          </ion-list>
+        </form>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

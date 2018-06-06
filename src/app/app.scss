@@ -1,3 +1,33 @@
+.nav-bar{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    text-align: right;
+    font-size: 1.2em;
+    padding: 0em 3em;
+
+    img.nav-logo{
+        float: left;
+        max-width: 4em !important;
+        padding: 1em;
+    }
+
+    .nav-list{
+        display: block;
+        padding: .5em 1em;
+
+        .nav-item{
+            display: inline;
+            padding: 1em;
+            cursor: pointer;
+
+            &:hover{
+                color: #d8b9ad !important;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 550px) {
     .col-sm-0 {
         display: none !important;
@@ -5,6 +35,9 @@
   }
   
   @media only screen and (min-width: 550px) {
+    .bar-button-default {
+        display: none !important;
+    }
     .col-md-0{
       display: none !important;
     }
@@ -12,4 +45,7 @@
 
     .text-center{
         text-align: center !important;
+    }
+    .content{
+        background: #f6ece8;
     }

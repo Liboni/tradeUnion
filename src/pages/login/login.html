@@ -17,8 +17,9 @@
     <ion-col col-md-6 offset-md-3>
       <ion-card>
         <ion-card-header>
+          Login
         </ion-card-header>
-        <form #form="ngForm" (ngSubmit)="sendRequest()">
+        <form #form="ngForm" (ngSubmit)="loginUser()">
           <ion-list>
             <ion-item class="search-content">
               <ion-label stacked>Username</ion-label>
@@ -31,9 +32,8 @@
             <button type="submit" color="primary" [disabled]="!form.valid" ion-button>
               Login </button>
           </ion-list>
-        </form>
+          </form>
       </ion-card>
-
     </ion-col>
   </ion-row>
 </ion-content>

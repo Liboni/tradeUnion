@@ -36,6 +36,9 @@ import { TourismPageModule } from '../pages/tourism/tourism.module';
 import { ZctuBackgroundPageModule } from '../pages/zctu-background/zctu-background.module';
 import { CareersSupportedPageModule } from '../pages/careers-supported/careers-supported.module';
 import { RegisterPageModule } from '../pages/register/register.module';
+import { AngularFireModule } from 'angularfire2'
+import { FIREBASE_CONFIG } from './app.firebase.config';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,8 @@ import { RegisterPageModule } from '../pages/register/register.module';
     RegisterPageModule,
     LoginPageModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

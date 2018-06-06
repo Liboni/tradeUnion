@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -16,49 +13,26 @@
   <ion-row>
     <ion-col col-md-6 offset-md-3>
       <ion-card>
-        <ion-card-header>
-            Register
-        </ion-card-header>
-        <form #form="ngForm" (ngSubmit)="sendRequest()">
-          <ion-list>
-            <ion-item class="search-content">
-              <ion-label stacked>Username</ion-label>
-              <ion-input #firstname="ngModel" name="firstname" [(ngModel)]="form.firstname" required type="text"></ion-input>
-            </ion-item>
+        <form>
+          <ion-list>           
             <ion-item class="search-content">
               <ion-label stacked>Email</ion-label>
-              <ion-input #firstname="ngModel" name="firstname" [(ngModel)]="form.firstname" required type="email"></ion-input>
-            </ion-item>
-            <ion-item class="search-content">
-              <ion-label stacked>Phone number</ion-label>
-              <ion-input #firstname="ngModel" name="firstname" [(ngModel)]="form.firstname" required type="email"></ion-input>
-            </ion-item>
-            <ion-item class="search-content">
-              <ion-label stacked>National ID</ion-label>
-              <ion-input #firstname="ngModel" name="firstname" [(ngModel)]="form.firstname" required type="email"></ion-input>
-            </ion-item>
-            <ion-item class="search-content">
-                <ion-label stacked>Affiliate</ion-label>
-                <ion-select>
-                    <ion-option value="m">Mining</ion-option>
-                    <ion-option value="h">Health Care</ion-option>
-                    <ion-option value="i">Information And Technology</ion-option>
-                    <ion-option value="t">Tourism</ion-option>
-                    <ion-option value="e">Education</ion-option>
-                  </ion-select>
-              </ion-item>
+              <ion-input #username="ngModel" name="username" [(ngModel)]="user.username" required type="email"></ion-input>
+            </ion-item>           
             <ion-item class="search-content">
               <ion-label stacked>Password</ion-label>
-              <ion-input #surname="ngModel" name="surname" [(ngModel)]="form.surname" required type="password"></ion-input>
+              <ion-input #password="ngModel" name="password" [(ngModel)]="user.password" required type="password"></ion-input>
             </ion-item>
-
             <ion-item class="search-content">
               <ion-label stacked>Confirm Password</ion-label>
-              <ion-input #surname="ngModel" name="surname" [(ngModel)]="form.surname" required type="password"></ion-input>
-            </ion-item>
-            <button type="submit" color="primary" [disabled]="!form.valid" ion-button>
-              Register </button>
+              <ion-input #confirmpassword="ngModel" name="confirmpassword" [(ngModel)]="user.confirmpassword" required type="password"></ion-input>
+            </ion-item>        
+            <span style="color: red" *ngIf="confirmpassword.touched && password.touched && user.confirmpassword !==user.password" > Password do not match</span>             
           </ion-list>
+          <button  color="primary" [disabled]="user.confirmpassword !== user.password"  [disabled]="!user.valid" (click)="register(user)" ion-button>
+            Register </button>
+            <button color="light" (click)="login()" ion-button>
+              Login </button>
         </form>
       </ion-card>
     </ion-col>

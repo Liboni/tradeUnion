@@ -1,0 +1,8 @@
+{
+  "name": "tradeUnion",
+  "app_id": "678f70e3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
